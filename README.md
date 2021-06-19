@@ -1,15 +1,15 @@
-#install git-lfs
+# install git-lfs
 curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
 sudo apt-get update
 sudo apt install -y git-lfs
 
-#clone repo
+# clone repo
 git clone https://github.com/EldarKurbanov/sky-segmentation
 
-#move to the repo
+# move to the repo
 cd sky-segmentation
 
-#install docker
+# install docker
 sudo apt-get install \
     apt-transport-https \
     ca-certificates \
@@ -27,12 +27,12 @@ sudo apt-get update
 
 sudo apt-get install docker-ce docker-ce-cli containerd.io
 
-#add group docker for running without sudo
+# add group docker for running without sudo
 sudo groupadd docker
 
 sudo usermod -aG docker $USER #logout and login to your user after it
 
-#install docker-nvidia
+# install docker-nvidia
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
    && curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add - \
    && curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
@@ -43,6 +43,6 @@ sudo apt-get install -y nvidia-docker2
 
 sudo systemctl restart docker
 
-#run this container
+# run this container
 docker-compose build #clean old docker build
 docker-compose up
