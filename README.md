@@ -45,4 +45,5 @@ sudo systemctl restart docker
 
 # run this container
 docker-compose build
+
 docker-compose up
