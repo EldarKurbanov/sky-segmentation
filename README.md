@@ -44,5 +44,5 @@ sudo apt-get install -y nvidia-docker2
 sudo systemctl restart docker
 
 # run this container
-docker-compose build #clean old docker build
+docker-compose build
 docker-compose up
