@@ -128,7 +128,7 @@ if __name__ == '__main__':
 				tf.config.threading.set_inter_op_parallelism_threads = 2048
 				tf.config.threading.set_intra_op_parallelism_threads = 2048
 				print("Yes")
-			tf.config.experimental.set_virtual_device_configuration(gpus[0], [tf.config.experimental.VirtualDeviceConfiguration(memory_limit=10024)])
+			tf.config.experimental.set_virtual_device_configuration(gpus[0], [tf.config.experimental.VirtualDeviceConfiguration(memory_limit=5012)])
 			#tf.config.experimental.set_memory_growth(gpu, True)
 		except RuntimeError as e:
 			print(e)
